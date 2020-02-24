@@ -30,7 +30,7 @@ After setting the `$DATA_PATH` variable run the following command (terminal) whi
 You may want to play around with `min_length`, `max_length` and `alpha` in `summarize.sh`.
 
 
-#Performance
+# Performance
 ## Reproduce the authors' results on ROUGE
 
 To be able to reproduce the authors' results on the CNN/Daily Mail dataset you first need to download both CNN and Daily Mail datasets [from Kyunghyun Cho's website](https://cs.nyu.edu/~kcho/DMQA/) (the links next to "Stories") in the same folder. Then uncompress the archives by running:
