@@ -9,11 +9,28 @@ The model is loaded with the pre-trained weights for the abstractive summarizati
 ## Setup
 
 ```
-git clone https://github.com/huggingface/transformers && cd transformers
-pip install .
-pip install nltk py-rouge
-cd examples/summarization
+git clone https://github.com/askaydevs/nlp-solverminds.git && cd summarization
+pip install -r requirements_sum.txt
 ```
+
+## Summarize any text
+
+Put the documents that you would like to summarize in a folder (the path to which is referred to as `$DATA_PATH` below) and run the following in the same folder as `run_summarization.py`:
+
+```bash
+python run_summarization.py \
+    --documents_dir $DATA_PATH \
+    --summaries_output_dir $SUMMARIES_PATH \ # optional
+    --no_cuda false \
+    --batch_size 4 \
+    --min_length 50 \
+    --max_length 200 \
+    --beam_size 5 \
+    --alpha 0.95 \
+    --block_trigram true \
+```
+
+You may want to play around with `min_length`, `max_length` and `alpha` to suit your use case. If you want to compute ROUGE on another dataset you will need to tweak the stories/summaries import in `utils_summarization.py` and tell it where to fetch the reference summaries.
 
 ## Reproduce the authors' results on ROUGE
 
@@ -40,22 +57,3 @@ python run_summarization.py \
 ```
 
 The scripts executes on GPU if one is available and if `no_cuda` is not set to `true`. Inference on multiple GPUs is not suported yet. The ROUGE scores will be displayed in the console at the end of evaluation and written in a `rouge_scores.txt` file. The script takes 30 hours to compute with a single Tesla V100 GPU and a batch size of 10 (300,000 texts to summarize).
-
-## Summarize any text
-
-Put the documents that you would like to summarize in a folder (the path to which is referred to as `$DATA_PATH` below) and run the following in the same folder as `run_summarization.py`:
-
-```bash
-python run_summarization.py \
-    --documents_dir $DATA_PATH \
-    --summaries_output_dir $SUMMARIES_PATH \ # optional
-    --no_cuda false \
-    --batch_size 4 \
-    --min_length 50 \
-    --max_length 200 \
-    --beam_size 5 \
-    --alpha 0.95 \
-    --block_trigram true \
-```
-
-You may want to play around with `min_length`, `max_length` and `alpha` to suit your use case. If you want to compute ROUGE on another dataset you will need to tweak the stories/summaries import in `utils_summarization.py` and tell it where to fetch the reference summaries.
