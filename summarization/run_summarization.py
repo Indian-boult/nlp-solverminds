@@ -38,7 +38,7 @@ def evaluate(args):
         "EOS": tokenizer.vocab["[unused1]"],
         "PAD": tokenizer.vocab["[PAD]"],
     }
-
+    # For calculating the rogue score
     if args.compute_rouge:
         reference_summaries = []
         generated_summaries = []
