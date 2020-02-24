@@ -21,14 +21,16 @@ Put the documents (a text file containing a string to be summarized) that you wo
 export DATA_PATH='path/to/data'
 ```
 
-After setting the `$DATA_PATH` variable run the following command in the same directory
+After setting the `$DATA_PATH` variable run the following command (terminal) while in the same directory:
 
 ```bash
 ./summarize.sh
 ```
 
-You may want to play around with `min_length`, `max_length` and `alpha` to suit your use case. If you want to compute ROUGE on another dataset you will need to tweak the stories/summaries import in `utils_summarization.py` and tell it where to fetch the reference summaries.
+You may want to play around with `min_length`, `max_length` and `alpha` in `summarize.sh`.
 
+
+#Performance
 ## Reproduce the authors' results on ROUGE
 
 To be able to reproduce the authors' results on the CNN/Daily Mail dataset you first need to download both CNN and Daily Mail datasets [from Kyunghyun Cho's website](https://cs.nyu.edu/~kcho/DMQA/) (the links next to "Stories") in the same folder. Then uncompress the archives by running:
