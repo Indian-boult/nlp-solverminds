@@ -116,7 +116,6 @@ class BertAbs(BertAbsPreTrainedModel):
         decoder_outputs, _ = self.decoder(decoder_input_ids[:, :-1], encoder_hidden_states, dec_state)
         return decoder_outputs
 
-
 class Bert(nn.Module):
     """ This class is not really necessary and should probably disappear.
     """
@@ -133,7 +132,6 @@ class Bert(nn.Module):
                 input_ids, token_type_ids=token_type_ids, attention_mask=attention_mask, **kwargs
             )
         return encoder_outputs
-
 
 class TransformerDecoder(nn.Module):
     """
