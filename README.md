@@ -9,5 +9,5 @@ In progress:
   5. Relationship extraction
   6. Terminology extraction
   7. [doc] Automatic question generator
-  8. [doc] Summarization
+  8. [doc] Summarization...................................Done!
   9. [doc] Other modules
