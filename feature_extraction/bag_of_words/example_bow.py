@@ -8,6 +8,6 @@ cat_in_the_hat_docs=[
        "There's No Place Like Space: All About Our Solar System (Cat in the Hat's Learning Library)"
       ]
 
-vector = get_bow(cat_in_the_hat_docs, max, stop_words=['all', 'in', 'the', 'is', 'and'])
+vector1 = get_bow(cat_in_the_hat_docs, max, stop_words=['all', 'in', 'the', 'is', 'and'])
 print(vector.shape)
 print(vector.toarray())
