@@ -33,7 +33,3 @@ def lesk(context_sentence, ambiguous_word, pos=None, synsets=None):
     )
 
     return sense
-
-sense1 = lesk(['I', 'went', 'to', 'the', 'bank', 'to', 'deposit', 'money', '.'], 'bank', 'n')
-sense2 = lesk(['I', 'went', 'to', 'the', 'bank', 'of', 'river', 'on', 'weekend', '.'], 'bank', 'n')
-print(sense1.lemmas())
