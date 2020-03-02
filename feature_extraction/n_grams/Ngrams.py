@@ -51,7 +51,7 @@ def ngrams(
     Return the ngrams generated from a sequence of items, as an iterator.
     For example:
 
-        >>> from nltk.util import ngrams
+        >>> from Ngrams import ngrams
         >>> list(ngrams([1,2,3,4,5], 3))
         [(1, 2, 3), (2, 3, 4), (3, 4, 5)]
 
