@@ -9,5 +9,5 @@ cat_in_the_hat_docs=[
       ]
 
 vector1 = get_bow(cat_in_the_hat_docs, max, stop_words=['all', 'in', 'the', 'is', 'and'])
-print(vector.shape)
-print(vector.toarray())
+print(vector1.shape)
+print(vector1.toarray())
