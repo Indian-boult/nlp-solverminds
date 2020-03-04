@@ -12,23 +12,44 @@ from os.path import join
 import docx2txt
 import pickle
 
-def get_data(file):             # Supported filetypes '.pdf', '.txt', '.doc', '.docx'
+def get_data(file):
+    """
+    Function to extract text from a file.
+    Currently supports text, pdf, doc and, docx formats.
+    :param file: name of the file must be placed in data folder in the same
+                 directory as this script.
+    :type str: string
+
+    :return text, title: returns text contained in the file and title of the
+                         file.
+    :type str, str: String
+    """
     path = 'data/'
     # Function for getting text from a PDF file
     def pdf_extract(file, dir_path=path):
+        """
+        A function to extract text from pdf files.
+        """
         text = ""
         title = ""
         with open(join(dir_path, file), 'rb') as f:
-            pdf = PyPDF2.PdfFileReader(f)
-            for _ in range(0, pdf.getNumPages()):
-                page = pdf.getPage(_)
-                text += page.extractText()
-            title += str(pdf.getDocumentInfo().title)
+            if pdf.isEncrypted:
+                return " PDF is encrypted, decrypt and try again."
+            else:
+                pdf = PyPDF2.PdfFileReader(f)
+                for _ in range(0, pdf.getNumPages()):
+                    page = pdf.getPage(_)
+                    text += page.extractText()
+                title += str(pdf.getDocumentInfo().title)
 
         return text.strip(), title
 
     # Function for getting text from a text file
     def txt_extract(file, dir_path=path):
+    """
+    A function to extract text from text files.
+
+    """
         title = ''.join(list(file)[:-4])
 
         text = ""
@@ -38,10 +59,10 @@ def get_data(file):             # Supported filetypes '.pdf', '.txt', '.doc', '.
 
         return text.strip(), title
 
-    # file-sample_500kB.doc  iso_8859-1.txt  sample.pdf
-
-
     def doc_x_extract(file, dir_path=path):
+    """
+    A function to extract text from docx and docx files.
+    """
         title = file[:-5]
         if file.endswith('doc'):
             title = file[:-4]
