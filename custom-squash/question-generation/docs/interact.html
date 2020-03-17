@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module interact</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>interact</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/askaydevs/project_solverminds/project_ship/custom-squash/question-generation/interact.py">/home/askaydevs/project_solverminds/project_ship/custom-squash/question-generation/interact.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="torch.nn.functional.html">torch.nn.functional</a><br>
+<a href="json.html">json</a><br>
+</td><td width="25%" valign=top><a href="logging.html">logging</a><br>
+<a href="random.html">random</a><br>
+</td><td width="25%" valign=top><a href="torch.html">torch</a><br>
+<a href="tqdm.html">tqdm</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-run"><strong>run</strong></a>()</dt></dl>
+ <dl><dt><a name="-sample_sequence"><strong>sample_sequence</strong></a>(inst, tokenizer, model, args, para_cache)</dt></dl>
+ <dl><dt><a name="-top_filtering"><strong>top_filtering</strong></a>(logits, top_k=0, top_p=0.0, threshold=-inf, filter_value=-inf)</dt><dd><tt>Filter&nbsp;a&nbsp;distribution&nbsp;of&nbsp;logits&nbsp;using&nbsp;top-k,&nbsp;top-p&nbsp;(nucleus)&nbsp;and/or&nbsp;threshold&nbsp;filtering<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;logits:&nbsp;logits&nbsp;distribution&nbsp;shape&nbsp;(vocabulary&nbsp;size)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;top_k:&nbsp;&lt;=0:&nbsp;no&nbsp;filtering,&nbsp;&gt;0:&nbsp;keep&nbsp;only&nbsp;top&nbsp;k&nbsp;tokens&nbsp;with&nbsp;highest&nbsp;probability.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;top_p:&nbsp;&lt;=0.0:&nbsp;no&nbsp;filtering,&nbsp;&gt;0.0:&nbsp;keep&nbsp;only&nbsp;a&nbsp;subset&nbsp;S&nbsp;of&nbsp;candidates,&nbsp;where&nbsp;S&nbsp;is&nbsp;the&nbsp;smallest&nbsp;subset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;whose&nbsp;total&nbsp;probability&nbsp;mass&nbsp;is&nbsp;greater&nbsp;than&nbsp;or&nbsp;equal&nbsp;to&nbsp;the&nbsp;threshold&nbsp;top_p.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In&nbsp;practice,&nbsp;we&nbsp;select&nbsp;the&nbsp;highest&nbsp;probability&nbsp;tokens&nbsp;whose&nbsp;cumulative&nbsp;probability&nbsp;mass&nbsp;exceeds<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;threshold&nbsp;top_p.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;threshold:&nbsp;a&nbsp;minimal&nbsp;threshold&nbsp;to&nbsp;keep&nbsp;logits</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>SPECIAL_TOKENS</strong> = ['&lt;bos&gt;', '&lt;eos&gt;', '&lt;paragraph&gt;', '&lt;answer-general&gt;', '&lt;answer-specific&gt;', '&lt;question-general&gt;', '&lt;question-specific&gt;', '&lt;pad&gt;']</td></tr></table>
+</body></html>

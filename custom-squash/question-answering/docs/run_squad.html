@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module run_squad</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>run_squad</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/askaydevs/project_solverminds/project_ship/custom-squash/question-answering/run_squad.py">/home/askaydevs/project_solverminds/project_ship/custom-squash/question-answering/run_squad.py</a></font></td></tr></table>
+    <p><tt>Run&nbsp;BERT&nbsp;on&nbsp;SQuAD.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="argparse.html">argparse</a><br>
+<a href="collections.html">collections</a><br>
+<a href="json.html">json</a><br>
+</td><td width="25%" valign=top><a href="logging.html">logging</a><br>
+<a href="math.html">math</a><br>
+<a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top><a href="os.html">os</a><br>
+<a href="pickle.html">pickle</a><br>
+<a href="random.html">random</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+<a href="torch.html">torch</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="run_squad.html#InputFeatures">InputFeatures</a>
+</font></dt><dt><font face="helvetica, arial"><a href="run_squad.html#SquadExample">SquadExample</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="builtins.html#tuple">builtins.tuple</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="run_squad.html#RawResult">RawResult</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="InputFeatures">class <strong>InputFeatures</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;single&nbsp;set&nbsp;of&nbsp;features&nbsp;of&nbsp;data.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="InputFeatures-__init__"><strong>__init__</strong></a>(self, unique_id, example_index, doc_span_index, tokens, token_to_orig_map, token_is_max_context, input_ids, input_mask, segment_ids, start_position=None, end_position=None, is_impossible=None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RawResult">class <strong>RawResult</strong></a>(<a href="builtins.html#tuple">builtins.tuple</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#RawResult">RawResult</a>(unique_id,&nbsp;start_logits,&nbsp;end_logits)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="run_squad.html#RawResult">RawResult</a></dd>
+<dd><a href="builtins.html#tuple">builtins.tuple</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="RawResult-__getnewargs__"><strong>__getnewargs__</strong></a>(self)</dt><dd><tt>Return&nbsp;self&nbsp;as&nbsp;a&nbsp;plain&nbsp;<a href="builtins.html#tuple">tuple</a>.&nbsp;&nbsp;Used&nbsp;by&nbsp;copy&nbsp;and&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="RawResult-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;nicely&nbsp;formatted&nbsp;representation&nbsp;string</tt></dd></dl>
+
+<dl><dt><a name="RawResult-_asdict"><strong>_asdict</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;new&nbsp;OrderedDict&nbsp;which&nbsp;maps&nbsp;field&nbsp;names&nbsp;to&nbsp;their&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="RawResult-_replace"><strong>_replace</strong></a>(_self, **kwds)</dt><dd><tt>Return&nbsp;a&nbsp;new&nbsp;<a href="#RawResult">RawResult</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;replacing&nbsp;specified&nbsp;fields&nbsp;with&nbsp;new&nbsp;values</tt></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="RawResult-_make"><strong>_make</strong></a>(iterable, new=&lt;built-in method __new__ of type object at 0x55f19e7cf240&gt;, len=&lt;built-in function len&gt;)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Make&nbsp;a&nbsp;new&nbsp;<a href="#RawResult">RawResult</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;from&nbsp;a&nbsp;sequence&nbsp;or&nbsp;iterable</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="RawResult-__new__"><strong>__new__</strong></a>(_cls, unique_id, start_logits, end_logits)</dt><dd><tt>Create&nbsp;new&nbsp;instance&nbsp;of&nbsp;<a href="#RawResult">RawResult</a>(unique_id,&nbsp;start_logits,&nbsp;end_logits)</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>unique_id</strong></dt>
+<dd><tt>Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;0</tt></dd>
+</dl>
+<dl><dt><strong>start_logits</strong></dt>
+<dd><tt>Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;1</tt></dd>
+</dl>
+<dl><dt><strong>end_logits</strong></dt>
+<dd><tt>Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;2</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>_fields</strong> = ('unique_id', 'start_logits', 'end_logits')</dl>
+
+<dl><dt><strong>_source</strong> = "from builtins import property as _property, tupl..._itemgetter(2), doc='Alias for field number 2')<font color="#c040c0">\n\n</font>"</dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#tuple">builtins.tuple</a>:<br>
+<dl><dt><a name="RawResult-__add__"><strong>__add__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self+value.</tt></dd></dl>
+
+<dl><dt><a name="RawResult-__contains__"><strong>__contains__</strong></a>(self, key, /)</dt><dd><tt>Return&nbsp;key&nbsp;in&nbsp;self.</tt></dd></dl>
+
+<dl><dt><a name="RawResult-__eq__"><strong>__eq__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="RawResult-__ge__"><strong>__ge__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&gt;=value.</tt></dd></dl>
+
+<dl><dt><a name="RawResult-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="RawResult-__getitem__"><strong>__getitem__</strong></a>(self, key, /)</dt><dd><tt>Return&nbsp;self[key].</tt></dd></dl>
+
+<dl><dt><a name="RawResult-__gt__"><strong>__gt__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&gt;value.</tt></dd></dl>
+
+<dl><dt><a name="RawResult-__hash__"><strong>__hash__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;hash(self).</tt></dd></dl>
+
+<dl><dt><a name="RawResult-__iter__"><strong>__iter__</strong></a>(self, /)</dt><dd><tt>Implement&nbsp;iter(self).</tt></dd></dl>
+
+<dl><dt><a name="RawResult-__le__"><strong>__le__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&lt;=value.</tt></dd></dl>
+
+<dl><dt><a name="RawResult-__len__"><strong>__len__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;len(self).</tt></dd></dl>
+
+<dl><dt><a name="RawResult-__lt__"><strong>__lt__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&lt;value.</tt></dd></dl>
+
+<dl><dt><a name="RawResult-__mul__"><strong>__mul__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self*value.</tt></dd></dl>
+
+<dl><dt><a name="RawResult-__ne__"><strong>__ne__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self!=value.</tt></dd></dl>
+
+<dl><dt><a name="RawResult-__rmul__"><strong>__rmul__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;value*self.</tt></dd></dl>
+
+<dl><dt><a name="RawResult-count"><strong>count</strong></a>(...)</dt><dd><tt>T.<a href="#RawResult-count">count</a>(value)&nbsp;-&gt;&nbsp;integer&nbsp;--&nbsp;return&nbsp;number&nbsp;of&nbsp;occurrences&nbsp;of&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="RawResult-index"><strong>index</strong></a>(...)</dt><dd><tt>T.<a href="#RawResult-index">index</a>(value,&nbsp;[start,&nbsp;[stop]])&nbsp;-&gt;&nbsp;integer&nbsp;--&nbsp;return&nbsp;first&nbsp;index&nbsp;of&nbsp;value.<br>
+Raises&nbsp;ValueError&nbsp;if&nbsp;the&nbsp;value&nbsp;is&nbsp;not&nbsp;present.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SquadExample">class <strong>SquadExample</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;single&nbsp;training/test&nbsp;example&nbsp;for&nbsp;the&nbsp;Squad&nbsp;dataset.<br>
+For&nbsp;examples&nbsp;without&nbsp;an&nbsp;answer,&nbsp;the&nbsp;start&nbsp;and&nbsp;end&nbsp;position&nbsp;are&nbsp;-1.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="SquadExample-__init__"><strong>__init__</strong></a>(self, qas_id, question_text, doc_tokens, orig_answer_text=None, start_position=None, end_position=None, is_impossible=None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="SquadExample-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="SquadExample-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-convert_examples_to_features"><strong>convert_examples_to_features</strong></a>(examples, tokenizer, max_seq_length, doc_stride, max_query_length, is_training)</dt><dd><tt>Loads&nbsp;a&nbsp;data&nbsp;file&nbsp;into&nbsp;a&nbsp;list&nbsp;of&nbsp;`InputBatch`s.</tt></dd></dl>
+ <dl><dt><a name="-get_final_text"><strong>get_final_text</strong></a>(pred_text, orig_text, do_lower_case, verbose_logging=False)</dt><dd><tt>Project&nbsp;the&nbsp;tokenized&nbsp;prediction&nbsp;back&nbsp;to&nbsp;the&nbsp;original&nbsp;text.</tt></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>()</dt></dl>
+ <dl><dt><a name="-open"><strong>open</strong></a>(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)</dt><dd><tt>Open&nbsp;file&nbsp;and&nbsp;return&nbsp;a&nbsp;stream.&nbsp;&nbsp;Raise&nbsp;IOError&nbsp;upon&nbsp;failure.<br>
+&nbsp;<br>
+file&nbsp;is&nbsp;either&nbsp;a&nbsp;text&nbsp;or&nbsp;byte&nbsp;string&nbsp;giving&nbsp;the&nbsp;name&nbsp;(and&nbsp;the&nbsp;path<br>
+if&nbsp;the&nbsp;file&nbsp;isn't&nbsp;in&nbsp;the&nbsp;current&nbsp;working&nbsp;directory)&nbsp;of&nbsp;the&nbsp;file&nbsp;to<br>
+be&nbsp;opened&nbsp;or&nbsp;an&nbsp;integer&nbsp;file&nbsp;descriptor&nbsp;of&nbsp;the&nbsp;file&nbsp;to&nbsp;be<br>
+wrapped.&nbsp;(If&nbsp;a&nbsp;file&nbsp;descriptor&nbsp;is&nbsp;given,&nbsp;it&nbsp;is&nbsp;closed&nbsp;when&nbsp;the<br>
+returned&nbsp;I/O&nbsp;<a href="builtins.html#object">object</a>&nbsp;is&nbsp;closed,&nbsp;unless&nbsp;closefd&nbsp;is&nbsp;set&nbsp;to&nbsp;False.)<br>
+&nbsp;<br>
+mode&nbsp;is&nbsp;an&nbsp;optional&nbsp;string&nbsp;that&nbsp;specifies&nbsp;the&nbsp;mode&nbsp;in&nbsp;which&nbsp;the&nbsp;file<br>
+is&nbsp;opened.&nbsp;It&nbsp;defaults&nbsp;to&nbsp;'r'&nbsp;which&nbsp;means&nbsp;open&nbsp;for&nbsp;reading&nbsp;in&nbsp;text<br>
+mode.&nbsp;&nbsp;Other&nbsp;common&nbsp;values&nbsp;are&nbsp;'w'&nbsp;for&nbsp;writing&nbsp;(truncating&nbsp;the&nbsp;file&nbsp;if<br>
+it&nbsp;already&nbsp;exists),&nbsp;'x'&nbsp;for&nbsp;creating&nbsp;and&nbsp;writing&nbsp;to&nbsp;a&nbsp;new&nbsp;file,&nbsp;and<br>
+'a'&nbsp;for&nbsp;appending&nbsp;(which&nbsp;on&nbsp;some&nbsp;Unix&nbsp;systems,&nbsp;means&nbsp;that&nbsp;all&nbsp;writes<br>
+append&nbsp;to&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;file&nbsp;regardless&nbsp;of&nbsp;the&nbsp;current&nbsp;seek&nbsp;position).<br>
+In&nbsp;text&nbsp;mode,&nbsp;if&nbsp;encoding&nbsp;is&nbsp;not&nbsp;specified&nbsp;the&nbsp;encoding&nbsp;used&nbsp;is&nbsp;platform<br>
+dependent:&nbsp;locale.getpreferredencoding(False)&nbsp;is&nbsp;called&nbsp;to&nbsp;get&nbsp;the<br>
+current&nbsp;locale&nbsp;encoding.&nbsp;(For&nbsp;reading&nbsp;and&nbsp;writing&nbsp;raw&nbsp;bytes&nbsp;use&nbsp;binary<br>
+mode&nbsp;and&nbsp;leave&nbsp;encoding&nbsp;unspecified.)&nbsp;The&nbsp;available&nbsp;modes&nbsp;are:<br>
+&nbsp;<br>
+=========&nbsp;===============================================================<br>
+Character&nbsp;Meaning<br>
+---------&nbsp;---------------------------------------------------------------<br>
+'r'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;open&nbsp;for&nbsp;reading&nbsp;(default)<br>
+'w'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;open&nbsp;for&nbsp;writing,&nbsp;truncating&nbsp;the&nbsp;file&nbsp;first<br>
+'x'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;create&nbsp;a&nbsp;new&nbsp;file&nbsp;and&nbsp;open&nbsp;it&nbsp;for&nbsp;writing<br>
+'a'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;open&nbsp;for&nbsp;writing,&nbsp;appending&nbsp;to&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;file&nbsp;if&nbsp;it&nbsp;exists<br>
+'b'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binary&nbsp;mode<br>
+'t'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text&nbsp;mode&nbsp;(default)<br>
+'+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;open&nbsp;a&nbsp;disk&nbsp;file&nbsp;for&nbsp;updating&nbsp;(reading&nbsp;and&nbsp;writing)<br>
+'U'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;universal&nbsp;newline&nbsp;mode&nbsp;(deprecated)<br>
+=========&nbsp;===============================================================<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;mode&nbsp;is&nbsp;'rt'&nbsp;(open&nbsp;for&nbsp;reading&nbsp;text).&nbsp;For&nbsp;binary&nbsp;random<br>
+access,&nbsp;the&nbsp;mode&nbsp;'w+b'&nbsp;opens&nbsp;and&nbsp;truncates&nbsp;the&nbsp;file&nbsp;to&nbsp;0&nbsp;bytes,&nbsp;while<br>
+'r+b'&nbsp;opens&nbsp;the&nbsp;file&nbsp;without&nbsp;truncation.&nbsp;The&nbsp;'x'&nbsp;mode&nbsp;implies&nbsp;'w'&nbsp;and<br>
+raises&nbsp;an&nbsp;`FileExistsError`&nbsp;if&nbsp;the&nbsp;file&nbsp;already&nbsp;exists.<br>
+&nbsp;<br>
+Python&nbsp;distinguishes&nbsp;between&nbsp;files&nbsp;opened&nbsp;in&nbsp;binary&nbsp;and&nbsp;text&nbsp;modes,<br>
+even&nbsp;when&nbsp;the&nbsp;underlying&nbsp;operating&nbsp;system&nbsp;doesn't.&nbsp;Files&nbsp;opened&nbsp;in<br>
+binary&nbsp;mode&nbsp;(appending&nbsp;'b'&nbsp;to&nbsp;the&nbsp;mode&nbsp;argument)&nbsp;return&nbsp;contents&nbsp;as<br>
+bytes&nbsp;objects&nbsp;without&nbsp;any&nbsp;decoding.&nbsp;In&nbsp;text&nbsp;mode&nbsp;(the&nbsp;default,&nbsp;or&nbsp;when<br>
+'t'&nbsp;is&nbsp;appended&nbsp;to&nbsp;the&nbsp;mode&nbsp;argument),&nbsp;the&nbsp;contents&nbsp;of&nbsp;the&nbsp;file&nbsp;are<br>
+returned&nbsp;as&nbsp;strings,&nbsp;the&nbsp;bytes&nbsp;having&nbsp;been&nbsp;first&nbsp;decoded&nbsp;using&nbsp;a<br>
+platform-dependent&nbsp;encoding&nbsp;or&nbsp;using&nbsp;the&nbsp;specified&nbsp;encoding&nbsp;if&nbsp;given.<br>
+&nbsp;<br>
+'U'&nbsp;mode&nbsp;is&nbsp;deprecated&nbsp;and&nbsp;will&nbsp;raise&nbsp;an&nbsp;exception&nbsp;in&nbsp;future&nbsp;versions<br>
+of&nbsp;Python.&nbsp;&nbsp;It&nbsp;has&nbsp;no&nbsp;effect&nbsp;in&nbsp;Python&nbsp;3.&nbsp;&nbsp;Use&nbsp;newline&nbsp;to&nbsp;control<br>
+universal&nbsp;newlines&nbsp;mode.<br>
+&nbsp;<br>
+buffering&nbsp;is&nbsp;an&nbsp;optional&nbsp;integer&nbsp;used&nbsp;to&nbsp;set&nbsp;the&nbsp;buffering&nbsp;policy.<br>
+Pass&nbsp;0&nbsp;to&nbsp;switch&nbsp;buffering&nbsp;off&nbsp;(only&nbsp;allowed&nbsp;in&nbsp;binary&nbsp;mode),&nbsp;1&nbsp;to&nbsp;select<br>
+line&nbsp;buffering&nbsp;(only&nbsp;usable&nbsp;in&nbsp;text&nbsp;mode),&nbsp;and&nbsp;an&nbsp;integer&nbsp;&gt;&nbsp;1&nbsp;to&nbsp;indicate<br>
+the&nbsp;size&nbsp;of&nbsp;a&nbsp;fixed-size&nbsp;chunk&nbsp;buffer.&nbsp;&nbsp;When&nbsp;no&nbsp;buffering&nbsp;argument&nbsp;is<br>
+given,&nbsp;the&nbsp;default&nbsp;buffering&nbsp;policy&nbsp;works&nbsp;as&nbsp;follows:<br>
+&nbsp;<br>
+*&nbsp;Binary&nbsp;files&nbsp;are&nbsp;buffered&nbsp;in&nbsp;fixed-size&nbsp;chunks;&nbsp;the&nbsp;size&nbsp;of&nbsp;the&nbsp;buffer<br>
+&nbsp;&nbsp;is&nbsp;chosen&nbsp;using&nbsp;a&nbsp;heuristic&nbsp;trying&nbsp;to&nbsp;determine&nbsp;the&nbsp;underlying&nbsp;device's<br>
+&nbsp;&nbsp;"block&nbsp;size"&nbsp;and&nbsp;falling&nbsp;back&nbsp;on&nbsp;`io.DEFAULT_BUFFER_SIZE`.<br>
+&nbsp;&nbsp;On&nbsp;many&nbsp;systems,&nbsp;the&nbsp;buffer&nbsp;will&nbsp;typically&nbsp;be&nbsp;4096&nbsp;or&nbsp;8192&nbsp;bytes&nbsp;long.<br>
+&nbsp;<br>
+*&nbsp;"Interactive"&nbsp;text&nbsp;files&nbsp;(files&nbsp;for&nbsp;which&nbsp;isatty()&nbsp;returns&nbsp;True)<br>
+&nbsp;&nbsp;use&nbsp;line&nbsp;buffering.&nbsp;&nbsp;Other&nbsp;text&nbsp;files&nbsp;use&nbsp;the&nbsp;policy&nbsp;described&nbsp;above<br>
+&nbsp;&nbsp;for&nbsp;binary&nbsp;files.<br>
+&nbsp;<br>
+encoding&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;encoding&nbsp;used&nbsp;to&nbsp;decode&nbsp;or&nbsp;encode&nbsp;the<br>
+file.&nbsp;This&nbsp;should&nbsp;only&nbsp;be&nbsp;used&nbsp;in&nbsp;text&nbsp;mode.&nbsp;The&nbsp;default&nbsp;encoding&nbsp;is<br>
+platform&nbsp;dependent,&nbsp;but&nbsp;any&nbsp;encoding&nbsp;supported&nbsp;by&nbsp;Python&nbsp;can&nbsp;be<br>
+passed.&nbsp;&nbsp;See&nbsp;the&nbsp;codecs&nbsp;module&nbsp;for&nbsp;the&nbsp;list&nbsp;of&nbsp;supported&nbsp;encodings.<br>
+&nbsp;<br>
+errors&nbsp;is&nbsp;an&nbsp;optional&nbsp;string&nbsp;that&nbsp;specifies&nbsp;how&nbsp;encoding&nbsp;errors&nbsp;are&nbsp;to<br>
+be&nbsp;handled---this&nbsp;argument&nbsp;should&nbsp;not&nbsp;be&nbsp;used&nbsp;in&nbsp;binary&nbsp;mode.&nbsp;Pass<br>
+'strict'&nbsp;to&nbsp;raise&nbsp;a&nbsp;ValueError&nbsp;exception&nbsp;if&nbsp;there&nbsp;is&nbsp;an&nbsp;encoding&nbsp;error<br>
+(the&nbsp;default&nbsp;of&nbsp;None&nbsp;has&nbsp;the&nbsp;same&nbsp;effect),&nbsp;or&nbsp;pass&nbsp;'ignore'&nbsp;to&nbsp;ignore<br>
+errors.&nbsp;(Note&nbsp;that&nbsp;ignoring&nbsp;encoding&nbsp;errors&nbsp;can&nbsp;lead&nbsp;to&nbsp;data&nbsp;loss.)<br>
+See&nbsp;the&nbsp;documentation&nbsp;for&nbsp;codecs.register&nbsp;or&nbsp;run&nbsp;'help(codecs.Codec)'<br>
+for&nbsp;a&nbsp;list&nbsp;of&nbsp;the&nbsp;permitted&nbsp;encoding&nbsp;error&nbsp;strings.<br>
+&nbsp;<br>
+newline&nbsp;controls&nbsp;how&nbsp;universal&nbsp;newlines&nbsp;works&nbsp;(it&nbsp;only&nbsp;applies&nbsp;to&nbsp;text<br>
+mode).&nbsp;It&nbsp;can&nbsp;be&nbsp;None,&nbsp;'',&nbsp;'\n',&nbsp;'\r',&nbsp;and&nbsp;'\r\n'.&nbsp;&nbsp;It&nbsp;works&nbsp;as<br>
+follows:<br>
+&nbsp;<br>
+*&nbsp;On&nbsp;input,&nbsp;if&nbsp;newline&nbsp;is&nbsp;None,&nbsp;universal&nbsp;newlines&nbsp;mode&nbsp;is<br>
+&nbsp;&nbsp;enabled.&nbsp;Lines&nbsp;in&nbsp;the&nbsp;input&nbsp;can&nbsp;end&nbsp;in&nbsp;'\n',&nbsp;'\r',&nbsp;or&nbsp;'\r\n',&nbsp;and<br>
+&nbsp;&nbsp;these&nbsp;are&nbsp;translated&nbsp;into&nbsp;'\n'&nbsp;before&nbsp;being&nbsp;returned&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;caller.&nbsp;If&nbsp;it&nbsp;is&nbsp;'',&nbsp;universal&nbsp;newline&nbsp;mode&nbsp;is&nbsp;enabled,&nbsp;but&nbsp;line<br>
+&nbsp;&nbsp;endings&nbsp;are&nbsp;returned&nbsp;to&nbsp;the&nbsp;caller&nbsp;untranslated.&nbsp;If&nbsp;it&nbsp;has&nbsp;any&nbsp;of<br>
+&nbsp;&nbsp;the&nbsp;other&nbsp;legal&nbsp;values,&nbsp;input&nbsp;lines&nbsp;are&nbsp;only&nbsp;terminated&nbsp;by&nbsp;the&nbsp;given<br>
+&nbsp;&nbsp;string,&nbsp;and&nbsp;the&nbsp;line&nbsp;ending&nbsp;is&nbsp;returned&nbsp;to&nbsp;the&nbsp;caller&nbsp;untranslated.<br>
+&nbsp;<br>
+*&nbsp;On&nbsp;output,&nbsp;if&nbsp;newline&nbsp;is&nbsp;None,&nbsp;any&nbsp;'\n'&nbsp;characters&nbsp;written&nbsp;are<br>
+&nbsp;&nbsp;translated&nbsp;to&nbsp;the&nbsp;system&nbsp;default&nbsp;line&nbsp;separator,&nbsp;os.linesep.&nbsp;If<br>
+&nbsp;&nbsp;newline&nbsp;is&nbsp;''&nbsp;or&nbsp;'\n',&nbsp;no&nbsp;translation&nbsp;takes&nbsp;place.&nbsp;If&nbsp;newline&nbsp;is&nbsp;any<br>
+&nbsp;&nbsp;of&nbsp;the&nbsp;other&nbsp;legal&nbsp;values,&nbsp;any&nbsp;'\n'&nbsp;characters&nbsp;written&nbsp;are&nbsp;translated<br>
+&nbsp;&nbsp;to&nbsp;the&nbsp;given&nbsp;string.<br>
+&nbsp;<br>
+If&nbsp;closefd&nbsp;is&nbsp;False,&nbsp;the&nbsp;underlying&nbsp;file&nbsp;descriptor&nbsp;will&nbsp;be&nbsp;kept&nbsp;open<br>
+when&nbsp;the&nbsp;file&nbsp;is&nbsp;closed.&nbsp;This&nbsp;does&nbsp;not&nbsp;work&nbsp;when&nbsp;a&nbsp;file&nbsp;name&nbsp;is&nbsp;given<br>
+and&nbsp;must&nbsp;be&nbsp;True&nbsp;in&nbsp;that&nbsp;case.<br>
+&nbsp;<br>
+A&nbsp;custom&nbsp;opener&nbsp;can&nbsp;be&nbsp;used&nbsp;by&nbsp;passing&nbsp;a&nbsp;callable&nbsp;as&nbsp;*opener*.&nbsp;The<br>
+underlying&nbsp;file&nbsp;descriptor&nbsp;for&nbsp;the&nbsp;file&nbsp;<a href="builtins.html#object">object</a>&nbsp;is&nbsp;then&nbsp;obtained&nbsp;by<br>
+calling&nbsp;*opener*&nbsp;with&nbsp;(*file*,&nbsp;*flags*).&nbsp;*opener*&nbsp;must&nbsp;return&nbsp;an&nbsp;open<br>
+file&nbsp;descriptor&nbsp;(passing&nbsp;os.open&nbsp;as&nbsp;*opener*&nbsp;results&nbsp;in&nbsp;functionality<br>
+similar&nbsp;to&nbsp;passing&nbsp;None).<br>
+&nbsp;<br>
+<a href="#-open">open</a>()&nbsp;returns&nbsp;a&nbsp;file&nbsp;<a href="builtins.html#object">object</a>&nbsp;whose&nbsp;type&nbsp;depends&nbsp;on&nbsp;the&nbsp;mode,&nbsp;and<br>
+through&nbsp;which&nbsp;the&nbsp;standard&nbsp;file&nbsp;operations&nbsp;such&nbsp;as&nbsp;reading&nbsp;and&nbsp;writing<br>
+are&nbsp;performed.&nbsp;When&nbsp;<a href="#-open">open</a>()&nbsp;is&nbsp;used&nbsp;to&nbsp;open&nbsp;a&nbsp;file&nbsp;in&nbsp;a&nbsp;text&nbsp;mode&nbsp;('w',<br>
+'r',&nbsp;'wt',&nbsp;'rt',&nbsp;etc.),&nbsp;it&nbsp;returns&nbsp;a&nbsp;TextIOWrapper.&nbsp;When&nbsp;used&nbsp;to&nbsp;open<br>
+a&nbsp;file&nbsp;in&nbsp;a&nbsp;binary&nbsp;mode,&nbsp;the&nbsp;returned&nbsp;class&nbsp;varies:&nbsp;in&nbsp;read&nbsp;binary<br>
+mode,&nbsp;it&nbsp;returns&nbsp;a&nbsp;BufferedReader;&nbsp;in&nbsp;write&nbsp;binary&nbsp;and&nbsp;append&nbsp;binary<br>
+modes,&nbsp;it&nbsp;returns&nbsp;a&nbsp;BufferedWriter,&nbsp;and&nbsp;in&nbsp;read/write&nbsp;mode,&nbsp;it&nbsp;returns<br>
+a&nbsp;BufferedRandom.<br>
+&nbsp;<br>
+It&nbsp;is&nbsp;also&nbsp;possible&nbsp;to&nbsp;use&nbsp;a&nbsp;string&nbsp;or&nbsp;bytearray&nbsp;as&nbsp;a&nbsp;file&nbsp;for&nbsp;both<br>
+reading&nbsp;and&nbsp;writing.&nbsp;For&nbsp;strings&nbsp;StringIO&nbsp;can&nbsp;be&nbsp;used&nbsp;like&nbsp;a&nbsp;file<br>
+opened&nbsp;in&nbsp;a&nbsp;text&nbsp;mode,&nbsp;and&nbsp;for&nbsp;bytes&nbsp;a&nbsp;BytesIO&nbsp;can&nbsp;be&nbsp;used&nbsp;like&nbsp;a&nbsp;file<br>
+opened&nbsp;in&nbsp;a&nbsp;binary&nbsp;mode.</tt></dd></dl>
+ <dl><dt><a name="-read_squad_examples"><strong>read_squad_examples</strong></a>(input_file, is_training, version_2_with_negative)</dt><dd><tt>Read&nbsp;a&nbsp;SQuAD&nbsp;json&nbsp;file&nbsp;into&nbsp;a&nbsp;list&nbsp;of&nbsp;<a href="#SquadExample">SquadExample</a>.</tt></dd></dl>
+ <dl><dt><a name="-write_predictions"><strong>write_predictions</strong></a>(all_examples, all_features, all_results, n_best_size, max_answer_length, do_lower_case, output_prediction_file, output_nbest_file, output_null_log_odds_file, verbose_logging, version_2_with_negative, null_score_diff_threshold)</dt><dd><tt>Write&nbsp;final&nbsp;predictions&nbsp;to&nbsp;the&nbsp;json&nbsp;file&nbsp;and&nbsp;log-odds&nbsp;of&nbsp;null&nbsp;if&nbsp;needed.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>CONFIG_NAME</strong> = 'config.json'<br>
+<strong>PYTORCH_PRETRAINED_BERT_CACHE</strong> = PosixPath('/home/askaydevs/.pytorch_pretrained_bert')<br>
+<strong>WEIGHTS_NAME</strong> = 'pytorch_model.bin'<br>
+<strong>absolute_import</strong> = _Feature((2, 5, 0, 'alpha', 1), (3, 0, 0, 'alpha', 0), 16384)<br>
+<strong>division</strong> = _Feature((2, 2, 0, 'alpha', 2), (3, 0, 0, 'alpha', 0), 8192)<br>
+<strong>logger</strong> = &lt;Logger run_squad (WARNING)&gt;<br>
+<strong>print_function</strong> = _Feature((2, 6, 0, 'alpha', 2), (3, 0, 0, 'alpha', 0), 65536)</td></tr></table>
+</body></html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module train</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>train</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/askaydevs/project_solverminds/project_ship/custom-squash/question-generation/train.py">/home/askaydevs/project_solverminds/project_ship/custom-squash/question-generation/train.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;Original&nbsp;codebase&nbsp;written&nbsp;by&nbsp;HuggingFace&nbsp;Inc.&nbsp;(https://github.com/huggingface/transfer-learning-conv-ai)</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="logging.html">logging</a><br>
+</td><td width="25%" valign=top><a href="math.html">math</a><br>
+</td><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="torch.html">torch</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-average_distributed_scalar"><strong>average_distributed_scalar</strong></a>(scalar, args)</dt><dd><tt>Average&nbsp;a&nbsp;scalar&nbsp;over&nbsp;the&nbsp;nodes&nbsp;if&nbsp;we&nbsp;are&nbsp;in&nbsp;distributed&nbsp;training.&nbsp;We&nbsp;use&nbsp;this&nbsp;for&nbsp;distributed&nbsp;evaluation.</tt></dd></dl>
+ <dl><dt><a name="-build_input_from_segments"><strong>build_input_from_segments</strong></a>(data_point, tokenizer, with_eos=True)</dt><dd><tt>Build&nbsp;a&nbsp;sequence&nbsp;of&nbsp;input.<br>
+1.&nbsp;For&nbsp;`general`&nbsp;questions,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`&lt;bos&gt;&nbsp;..&nbsp;paragraph&nbsp;text&nbsp;..&nbsp;&lt;answer-general&gt;&nbsp;..&nbsp;answer&nbsp;span&nbsp;..&nbsp;&lt;question-general&gt;&nbsp;..&nbsp;question&nbsp;span&nbsp;..&nbsp;&lt;eos&gt;`<br>
+2.&nbsp;For&nbsp;`specific`&nbsp;questions,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`&lt;bos&gt;&nbsp;..&nbsp;paragraph&nbsp;text&nbsp;..&nbsp;&lt;answer-specific&gt;&nbsp;..&nbsp;answer&nbsp;span&nbsp;..&nbsp;&lt;question-specific&gt;&nbsp;..&nbsp;question&nbsp;span&nbsp;..&nbsp;&lt;eos&gt;`.</tt></dd></dl>
+ <dl><dt><a name="-build_para_only_input_from_segments"><strong>build_para_only_input_from_segments</strong></a>(data_point, tokenizer)</dt><dd><tt>A&nbsp;paragraph-only&nbsp;version&nbsp;of&nbsp;<a href="#-build_input_from_segments">build_input_from_segments</a>().</tt></dd></dl>
+ <dl><dt><a name="-build_qa_only_input_from_segments"><strong>build_qa_only_input_from_segments</strong></a>(data_point, tokenizer, with_eos=True)</dt><dd><tt>A&nbsp;QA-only&nbsp;version&nbsp;of&nbsp;<a href="#-build_input_from_segments">build_input_from_segments</a>().</tt></dd></dl>
+ <dl><dt><a name="-get_data_loaders"><strong>get_data_loaders</strong></a>(args, tokenizer)</dt><dd><tt>Prepare&nbsp;the&nbsp;dataset&nbsp;for&nbsp;training&nbsp;and&nbsp;evaluation</tt></dd></dl>
+ <dl><dt><a name="-pad_dataset"><strong>pad_dataset</strong></a>(dataset, padding=0)</dt><dd><tt>Pad&nbsp;the&nbsp;dataset.&nbsp;This&nbsp;could&nbsp;be&nbsp;optimized&nbsp;by&nbsp;defining&nbsp;a&nbsp;Dataset&nbsp;class&nbsp;and&nbsp;padd&nbsp;only&nbsp;batches&nbsp;but&nbsp;this&nbsp;is&nbsp;simpler.</tt></dd></dl>
+ <dl><dt><a name="-train"><strong>train</strong></a>()</dt></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>CONFIG_NAME</strong> = 'config.json'<br>
+<strong>MODEL_INPUTS</strong> = ['input_ids', 'lm_labels', 'token_type_ids']<br>
+<strong>SPECIAL_TOKENS</strong> = ['&lt;bos&gt;', '&lt;eos&gt;', '&lt;paragraph&gt;', '&lt;answer-general&gt;', '&lt;answer-specific&gt;', '&lt;question-general&gt;', '&lt;question-specific&gt;', '&lt;pad&gt;']<br>
+<strong>WEIGHTS_NAME</strong> = 'pytorch_model.bin'<br>
+<strong>logger</strong> = &lt;Logger ./train.py (WARNING)&gt;<br>
+<strong>parser</strong> = ArgumentParser(prog='pydoc', usage=None, descrip...atter'&gt;, conflict_handler='error', add_help=True)</td></tr></table>
+</body></html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module preprocessing</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>preprocessing</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/askaydevs/project_solverminds/project_ship/preprocessing/preprocessing.py">/home/askaydevs/project_solverminds/project_ship/preprocessing/preprocessing.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="nltk.html">nltk</a><br>
+<a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="pickle.html">pickle</a><br>
+<a href="re.html">re</a><br>
+</td><td width="25%" valign=top><a href="spacy.html">spacy</a><br>
+<a href="string.html">string</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-do_lemmatization"><strong>do_lemmatization</strong></a>(text)</dt><dd><tt>:param&nbsp;text:&nbsp;sting&nbsp;to&nbsp;be&nbsp;lemmatized<br>
+:type&nbsp;str:&nbsp;python&nbsp;string<br>
+:return&nbsp;lemmas:&nbsp;iterable&nbsp;of&nbsp;strings<br>
+:type&nbsp;list:&nbsp;python&nbsp;list</tt></dd></dl>
+ <dl><dt><a name="-do_stemming"><strong>do_stemming</strong></a>(text)</dt><dd><tt>:param&nbsp;text:&nbsp;string&nbsp;to&nbsp;be&nbsp;stemmed<br>
+:type&nbsp;str:&nbsp;python&nbsp;string<br>
+:return&nbsp;stemms:&nbsp;iterable&nbsp;of&nbsp;strings<br>
+:type&nbsp;list:&nbsp;python&nbsp;list</tt></dd></dl>
+ <dl><dt><a name="-do_tokeinze"><strong>do_tokeinze</strong></a>(text)</dt><dd><tt>The&nbsp;native&nbsp;nltk&nbsp;string&nbsp;tokenizer.<br>
+&nbsp;<br>
+:param&nbsp;str&nbsp;text:&nbsp;The&nbsp;string&nbsp;to&nbsp;be&nbsp;tokenized,&nbsp;passed&nbsp;a&nbsp;as&nbsp;python&nbsp;string<br>
+:return&nbsp;list&nbsp;processed:&nbsp;tokenized&nbsp;text</tt></dd></dl>
+ <dl><dt><a name="-get_named_entites"><strong>get_named_entites</strong></a>(text)</dt><dd><tt>:param&nbsp;text:&nbsp;text&nbsp;from&nbsp;which&nbsp;the&nbsp;named&nbsp;entities&nbsp;to&nbsp;be&nbsp;fetched<br>
+:type&nbsp;string:&nbsp;python&nbsp;string<br>
+&nbsp;<br>
+:return&nbsp;entities:&nbsp;List&nbsp;of&nbsp;tuples,&nbsp;each&nbsp;tuple&nbsp;is&nbsp;having&nbsp;entity&nbsp;name,&nbsp;its<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start&nbsp;char&nbsp;and&nbsp;end&nbsp;char,&nbsp;entity&nbsp;type<br>
+:type&nbsp;list:&nbsp;python&nbsp;list&nbsp;of&nbsp;tuples</tt></dd></dl>
+ <dl><dt><a name="-get_postags"><strong>get_postags</strong></a>(text)</dt><dd><tt>:param&nbsp;text:&nbsp;text&nbsp;from&nbsp;which&nbsp;the&nbsp;part-of-speech&nbsp;tags&nbsp;to&nbsp;be&nbsp;identified<br>
+:type&nbsp;string:&nbsp;python&nbsp;string<br>
+&nbsp;<br>
+:return&nbsp;postags:&nbsp;List&nbsp;of&nbsp;tuples,&nbsp;each&nbsp;tuple&nbsp;is&nbsp;having&nbsp;token&nbsp;and&nbsp;&nbsp;it's&nbsp;predicted<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;part-of-speech&nbsp;tag<br>
+:type&nbsp;list:&nbsp;python&nbsp;list&nbsp;of&nbsp;tuples</tt></dd></dl>
+ <dl><dt><a name="-process"><strong>process</strong></a>(text)</dt><dd><tt>Clean&nbsp;a&nbsp;string&nbsp;for&nbsp;newlines,&nbsp;bullets&nbsp;&amp;&nbsp;numbering,&nbsp;punctuation,<br>
+uppercase&nbsp;chars&nbsp;chunk&nbsp;of&nbsp;spaces.<br>
+&nbsp;<br>
+:param&nbsp;str&nbsp;text:&nbsp;The&nbsp;string&nbsp;to&nbsp;be&nbsp;processed,&nbsp;passed&nbsp;a&nbsp;an&nbsp;python&nbsp;string<br>
+:return&nbsp;str&nbsp;processed:&nbsp;processed&nbsp;text.</tt></dd></dl>
+ <dl><dt><a name="-rm_custom_sw"><strong>rm_custom_sw</strong></a>(text, custom_sw)</dt><dd><tt>:param&nbsp;text:&nbsp;text&nbsp;from&nbsp;which&nbsp;the&nbsp;custom&nbsp;stopwords&nbsp;to&nbsp;be&nbsp;removed<br>
+:type&nbsp;string:&nbsp;python&nbsp;string<br>
+:param&nbsp;custom_sw:&nbsp;iterable&nbsp;of&nbsp;stopwords&nbsp;to&nbsp;be&nbsp;removed<br>
+:type&nbsp;list:&nbsp;python&nbsp;list<br>
+&nbsp;<br>
+:return&nbsp;filtered_tokens:&nbsp;Tokenized&nbsp;text&nbsp;with&nbsp;custom&nbsp;stopwords&nbsp;removed<br>
+:type&nbsp;list:&nbsp;python&nbsp;list</tt></dd></dl>
+ <dl><dt><a name="-rm_stopwords"><strong>rm_stopwords</strong></a>(token_list)</dt><dd><tt>function&nbsp;to&nbsp;remove&nbsp;stopwords&nbsp;as&nbsp;specified&nbsp;in&nbsp;nltk&nbsp;english&nbsp;stopwords&nbsp;from&nbsp;a<br>
+list&nbsp;of&nbsp;tokens.<br>
+&nbsp;<br>
+:param&nbsp;token_list:&nbsp;list&nbsp;of&nbsp;tokens&nbsp;to&nbsp;be&nbsp;filtered<br>
+:type&nbsp;list:&nbsp;iterable&nbsp;of&nbsp;strings<br>
+:return&nbsp;clean_token_list:&nbsp;list&nbsp;of&nbsp;tokens&nbsp;(no&nbsp;stopwords)<br>
+:type&nbsp;list:&nbsp;iterable&nbsp;of&nbsp;strings</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>nlp</strong> = &lt;spacy.lang.en.English object&gt;<br>
+<strong>stopwords</strong> = &lt;WordListCorpusReader in '.../corpora/stopwords' (not loaded yet)&gt;</td></tr></table>
+</body></html>
