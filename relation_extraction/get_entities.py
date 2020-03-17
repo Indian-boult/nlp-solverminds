@@ -16,8 +16,6 @@ def get_entities(sent):
   prefix = ""
   modifier = ""
 
-  #############################################################
-
   for tok in nlp(sent):
     ## chunk 2
     # if token is a punctuation mark then move on to the next token
@@ -52,6 +50,5 @@ def get_entities(sent):
       # update variables
       prv_tok_dep = tok.dep_
       prv_tok_text = tok.text
-  #############################################################
 
   return [ent1.strip(), ent2.strip()]

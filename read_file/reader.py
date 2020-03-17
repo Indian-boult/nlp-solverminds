@@ -33,10 +33,10 @@ def get_data(file):
         text = ""
         title = ""
         with open(join(dir_path, file), 'rb') as f:
+            pdf = PyPDF2.PdfFileReader(f)
             if pdf.isEncrypted:
                 return " PDF is encrypted, decrypt and try again."
             else:
-                pdf = PyPDF2.PdfFileReader(f)
                 for _ in range(0, pdf.getNumPages()):
                     page = pdf.getPage(_)
                     text += page.extractText()
@@ -46,10 +46,10 @@ def get_data(file):
 
     # Function for getting text from a text file
     def txt_extract(file, dir_path=path):
-    """
-    A function to extract text from text files.
+        """
+        A function to extract text from text files.
 
-    """
+        """
         title = ''.join(list(file)[:-4])
 
         text = ""
@@ -60,9 +60,9 @@ def get_data(file):
         return text.strip(), title
 
     def doc_x_extract(file, dir_path=path):
-    """
-    A function to extract text from docx and docx files.
-    """
+        """
+        A function to extract text from docx and docx files.
+        """
         title = file[:-5]
         if file.endswith('doc'):
             title = file[:-4]
@@ -84,19 +84,3 @@ def get_data(file):
 
     return content, title
 
-'''
-description = "Takes filename as an input and returns text in it."
-parser = argparse.ArgumentParser(description = description)
-parser.add_argument('--filename', '-f', help="Name of the file")
-args = parser.parse_args()
-if args.filename:
-    filename = args.filename
-    if filename.endswith('.pdf'):
-        content, title = pdf_extract(filename)
-    elif filename.endswith('.txt'):
-        content, title = txt_extract(filename)
-    elif filename.endswith('.docx'):
-        content, title = doc_x_extract(filename)
-    elif filename.endswith('doc'):
-        content, title = doc_x_extract(filename)
-'''

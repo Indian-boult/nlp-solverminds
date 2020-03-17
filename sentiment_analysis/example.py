@@ -1,7 +1,7 @@
 from get_sentiment import SentimentIntensityAnalyzer
-sentences = ['I really like the new design of your website!',
-             'I’m not sure if I like the new design',
-             'The new design is awful!',
+sentences = ['Coronet has the best lines of all day cruisers!',
+             'Bertram has a deep V hull and runs easily through seas.',
+             'Pastel-colored 1980s day cruisers from Florida are ugly.',
              ]
 
 sid = SentimentIntensityAnalyzer()
