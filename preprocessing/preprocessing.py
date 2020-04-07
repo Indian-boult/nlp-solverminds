@@ -17,19 +17,49 @@ def process(text):
 
     :param str text: The string to be processed, passed a an python string
     :return str processed: processed text.
+
+    This version currently takes the text and produces the one with no newlines,
+    this is important because it removes bullets and numbering and concatenate
+    as one sigle paragraph. This might have implications on the output because
+    of the lost context in processing.
+
+    This function produces the text as a input to the SQUASH model, it doesn't
+    removes the stopwords or punctuation for the reason that neural and
+    transformer models their own vacbulary to handle this, in some cases models
+    have gained better understanding of the language when there are stopwords
+    were included.
     """
+    # Space chunks removal
+    space_mod = re.sub("\s+", " ", text)
+    # replace newlines with spaces and deleting carriage returns
+    newl_mod = space_mod.replace("\n", " ").replace("\r", "")
+    # Removing bullets and numbering
+    bulnum_mod = re.sub("\d\.\s+|[a-z]\)\s+|•\s+|[A-Z]\.\s+|[IVX]+\.\s+", "", newl_mod)
+    # Case conversion
+    case_mod = bulnum_mod.lower()
+    # special chars removal
+    schar_mod = re.sub("[^A-Za-z0-9]+", " ", case_mod)
+    # Strip the text
+    processed = space_mod.strip()
+    # Return processed text
+    return processed
+
+
+
+
+
+
+    # Space chunks removal
+    space_mod = re.sub("\s+", "", schar_mod)
     # replace newlines with spaces and deleting carriage returns
     newl_mod = text.replace("\n", " ").replace("\r", "")
     # Removing bullets and numbering
     bulnum_mod = re.sub("\d\.\s+|[a-z]\)\s+|•\s+|[A-Z]\.\s+|[IVX]+\.\s+", "", newl_mod)
     # Punctuation removal
-    punc_mod = bulnum_mod.translate(str.maketrans("", "", string.punctuation))
+    #punc_mod = bulnum_mod.translate(str.maketrans("", "", string.punctuation))
     # Case conversion
     case_mod = punc_mod.lower()
-    # special chars removal
-    schar_mod = re.sub("[^A-Za-z0-9]+", " ", case_mod)
-    # Space chunks removal
-    space_mod = re.sub("\s+", " ", schar_mod)
+
     # Strip the text
     processed = space_mod.strip()
     # Return processed text
@@ -143,3 +173,17 @@ def get_postags(text):
         postags.append((token, token.pos_))
 
     return postags
+
+
+str = '''
+    Cargo operations pose a very high risk in the aspect of injuries to personnel and health risks.
+    Proper and adequate “Personal Protective Clothing and Equipment” must be worn at all times by personnel
+    involved in cargo operations. Care must be taken to avoid walking or standing below suspended loads.
+    The Master/Chief Officer/Duty Officer must brief and instruct all personnel regarding the health/injury
+    risks involved depending upon the nature/type of cargo. In case of critical cargo operations, a risk
+    assessment should be carried out in order to assess the safety procedures effectiveness. This risk assessment
+    may or may not be of formal nature; however, it is very important that all officer and ratings understand the
+    risk involved in such critical or non-regular operations.
+'''
+
+print(process(str))
