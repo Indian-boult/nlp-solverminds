@@ -129,7 +129,7 @@ dmypy.json
 .pyre/
 
 # Large models and datasets
-/bert_large_qa_model
-/gpt2_corefs_question_generation
+bert_large_qa_model/
+gpt2_corefs_question_generation/
 .pickle
 
